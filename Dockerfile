@@ -1,4 +1,4 @@
-FROM amazoncorretto:21
-COPY LlamaPayTf-0.0.1-SNAPSHOT.jar /app/LlamaPayTf-0.0.1-SNAPSHOT.jar
+FROM amazoncorretto:23-alpine-jdk
+COPY target/LlamaPayTf-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8085
-ENTRYPOINT ["java", "-jar", "/LlamaPayTf-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app.jar"]
